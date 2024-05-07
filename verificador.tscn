@@ -58,6 +58,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+self_modulate = Color(0.72549, 0.776471, 1, 0.643137)
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -70,38 +71,58 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer"]
+self_modulate = Color(0.333333, 0.490196, 1, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
 
-[node name="Control" type="Control" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer"]
+self_modulate = Color(0.909804, 0.917647, 0.964706, 1)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 24.445)
 layout_mode = 2
 
-[node name="NomeInput" type="TextEdit" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 32)
+[node name="NomeInput" type="TextEdit" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 placeholder_text = "Nome"
 
-[node name="PontosInput" type="TextEdit" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 32)
+[node name="Control2" type="Control" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24.445)
+layout_mode = 2
+
+[node name="PontosInput" type="TextEdit" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 placeholder_text = "Pontos
 "
 
-[node name="Verifcar" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/VBoxContainer"]
+[node name="SpinBox" type="SpinBox" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24.445)
+layout_mode = 2
+
+[node name="Verifcar" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Verificar
 "
 
 [node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer"]
+self_modulate = Color(1, 0.368627, 0.917647, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 
