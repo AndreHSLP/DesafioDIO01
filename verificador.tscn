@@ -121,6 +121,35 @@ layout_mode = 2
 text = "Verificar
 "
 
+[node name="Control4" type="Control" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24.445)
+layout_mode = 2
+
+[node name="Vitorias" type="TextEdit" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Vitorias
+"
+
+[node name="Control5" type="Control" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24.445)
+layout_mode = 2
+
+[node name="Derrotas" type="TextEdit" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Derrotas
+
+"
+
+[node name="Control6" type="Control" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24.445)
+layout_mode = 2
+
+[node name="RankBtn" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Verificar rank"
+
 [node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer"]
 self_modulate = Color(1, 0.368627, 0.917647, 1)
 layout_mode = 2

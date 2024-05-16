@@ -8,13 +8,22 @@ extends CanvasLayer
 
 var numeros="0123456789"
 
+@onready var vitorias = $MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer/Vitorias
+@onready var derrotas = $MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer/Derrotas
+
+
+@onready var rank_btn = $MarginContainer/Panel/MarginContainer/VBoxContainer/Panel2/VBoxContainer/Panel/MarginContainer/VBoxContainer/RankBtn
+
+
 
 func _ready():
 
 	verifcar.button_up.connect(verificarTudo)
+	rank_btn.button_up.connect(verificarRank)
+
 
 func verificarTudo():
-	var rank="A"
+	var rank=""
 	if nome_input.text.is_empty():
 		return
 	if pontos_input.text.is_empty():
@@ -68,3 +77,73 @@ func verificarTudo():
 		return
 	
 	resultado.text="O Herói de nome "+nome_input.text+" está no nível de " + rank + " com: " + pontos_input.text +" XP."
+
+
+
+func verificarRank():
+	var rank:String
+	
+	
+	if vitorias.text.is_empty():
+		return
+	if derrotas.text.is_empty():
+		return
+	
+	for c in derrotas.text:
+		var temNumero=false
+		
+		for n in numeros:
+			if n==c:
+				temNumero=true
+				break
+		
+		if !temNumero:
+			resultado.text="Numero Invalido"
+			return
+	
+	
+	
+	for c in vitorias.text:
+		var temNumero=false
+		
+		for n in numeros:
+			if n==c:
+				temNumero=true
+				break
+		
+		if !temNumero:
+			resultado.text="Numero Invalido"
+			return
+	
+	var vitoriasInt=vitorias.text.to_int()
+	var derrotasInt=derrotas.text.to_int()
+	
+	var saldo=vitoriasInt-derrotasInt
+	
+#Se vitórias for menor do que 10 = Ferro
+#Se vitórias for entre 11 e 20 = Bronze
+#Se vitórias for entre 21 e 50 = Prata
+#Se vitórias for entre 51 e 80 = Ouro
+#Se vitórias for entre 81 e 90 = Diamante
+#Se vitórias for entre 91 e 100= Lendário
+#Se vitórias for maior ou igual a 101 = Imortal
+	
+	
+	if vitoriasInt<=10:
+		rank="Ferro"
+	elif vitoriasInt<=20:
+		rank="Bronze"
+	elif vitoriasInt<=50:
+		rank="Prata"
+	elif vitoriasInt<=80:
+		rank="Ouro"
+	elif vitoriasInt<=90:
+		rank="Diamante"
+	elif vitoriasInt<=100:
+		rank="Lendário"
+	elif vitoriasInt>100:
+		rank="Imortal"
+	
+	resultado.text="O Herói tem de saldo de "+str(saldo)+" está no nível de " + rank
+	
+	pass
